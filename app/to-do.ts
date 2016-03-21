@@ -1,46 +1,77 @@
-// class Thing {
-//   propertyName: type = initialValue;
+
+// interface IPerson{
+//   name: string;
+//   email: string;
+//   phone?: string;
+// }
+// interface ITask {
+//   description: string;
+//   done: boolean;
+//   priority: string;
+//   markDone(): void;
+//   assignedTo?: IPerson;
+// }
+// // class Thing {
+// //   propertyName: type = initialValue;
+// // }
+//
+// class Task implements ITask {
+//   done: boolean = false;
+//   constructor(public description: string, public priority: string, public assignedTo?: IPerson) {}
+//   markDone() {
+//     this.done = true;
+//   }
+// }
+// class HomeTask extends Task {
+//   constructor(public description: string, public priority: string, public assignedTo?: IPerson){
+//     super(description, priority);
+//   }
+// }
+//
+//
+// class HobbyTask extends Task {
+//   constructor(public description: string) {
+//     super(description, "low");
+//   }
+// }
+// class WorkTask extends Task {
+//   constructor(public dueDate: Date, public description: string, public priority: string, public assignedTo: IPerson){
+//     super(description, priority, assignedTo);
+//   }
+// }
+// var diane: IPerson = {
+//   name: "Diane D",
+//   email: "diane@epicodus.com"
+// }
+//
+// var thor: IPerson = {
+//   name: "Thor Son of Odin",
+//   email: "thor@asgard.com"
+// }
+//
+// var loki: IPerson = {
+//   name: "God of mischief",
+//   email: "loki@geocities.com"
 // }
 
-class Task {
-  done: boolean;
-  constructor(public description: string, public priority: string) {
-    this.done = false;
-  }
-  markDone() {
-    this.done = true;
-  }
-}
-class HomeTask extends Task {}
+// var tasks = [];
+// tasks.push(new HomeTask("Do the dishes.", "High"));
+// tasks.push(new HomeTask("Buy chocolate.", "Low"));
+// tasks.push(new HomeTask("Wash the laundry.", "High"));
+//
+// tasks.push(new HobbyTask("Practice origami."));
+// tasks.push(new HobbyTask("Bake a pie."));
+//
+// var today = new Date();
+// var tomorrow = new Date();
+// tomorrow.setDate(today.getDate() + 1);
+// var nextDay = new Date();
+// nextDay.setDate(today.getDate() + 2);
+//
+// tasks.push(new WorkTask(today, "Update blog.", "High"));
+// tasks.push(new WorkTask(tomorrow, "Go to meeting.", "Medium"));
+// tasks.push(new WorkTask(nextDay, "Clean ceiling.", "Low"));
+//
+// console.log(tasks);
 
-
-class HobbyTask extends Task {
-  constructor(public description: string) {
-    super(description, "low");
-  }
-}
-class WorkTask extends Task {
-  constructor(public dueDate: Date, public description: string, public priority: string){
-    super(description, priority);
-  }
-}
-
-var tasks = [];
-tasks.push(new HomeTask("Do the dishes.", "High"));
-tasks.push(new HomeTask("Buy chocolate.", "Low"));
-tasks.push(new HomeTask("Wash the laundry.", "High"));
-
-tasks.push(new HobbyTask("Practice origami."));
-tasks.push(new HobbyTask("Bake a pie."));
-
-var today = new Date();
-var tomorrow = new Date();
-tomorrow.setDate(today.getDate() + 1);
-var nextDay = new Date();
-nextDay.setDate(today.getDate() + 2);
-
-tasks.push(new WorkTask(today, "Update blog.", "High"));
-tasks.push(new WorkTask(tomorrow, "Go to meeting.", "Medium"));
-tasks.push(new WorkTask(nextDay, "Clean ceiling.", "Low"));
-
-console.log(tasks);
+ // We are making sure that any classes which implement the ITask interface will have at least 3 properties: description, done, priority, and a method called markDone that takes no arguments and returns no values (which is what the : void means).
